@@ -1,0 +1,111 @@
+
+
+.commonPaging {
+    font-size : 0;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 0;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    a {
+        font-size : 16px;
+        color     : #696969;
+        padding   : 5px 12px;
+        display   : inline-block;
+        margin    : 0 5px;
+        border    : 1px solid #d8d8d8;
+        transition: 0.5s ease all;
+        margin-bottom: 12px;
+        &:hover {
+            background  : $color;
+            border-color: $color;
+            color       : #fff;
+        }
+
+        &.prev {
+            background         : url(images/iconfont-pagation-left.png) no-repeat;
+            background-position: center center;
+            background-color   : #d4d4d4;
+            padding            : 5px 15px;
+
+            &:hover {
+                background-color: $color;
+                border-color    : $color;
+            }
+        }
+
+        &.next {
+            background         : url(images/iconfont-pagation-right.png) no-repeat;
+            background-position: center center;
+            background-color   : #d4d4d4;
+            padding            : 5px 15px;
+
+            &:hover {
+                background-color: $color;
+                border-color    : $color;
+            }
+        }
+
+        &.currentBgColor {
+            background-color: $color;
+            border-color    : $color;
+        }
+
+        &.prev,
+        &.next {
+            // width:35px;
+            // height:36px;
+            span{
+                visibility: hidden;
+            }
+        }
+
+        &.active {
+            border-color    : transparent !important;
+            background-color: transparent !important;
+            color           : $color !important;
+            font-weight     : bold;
+        }
+
+        &.other {
+            border-color: transparent;
+        }
+    }
+}
+@include media('>=576px'){
+    .commonPaging{
+        padding-top: 60px;
+    }
+}
+.commonPaging{
+    margin-bottom: 50px;
+}
+
+@media (max-width:991px){
+    .commonPaging{
+        display:block !important;
+    }
+}
+
+@media (max-width:767px){
+    .commonPaging{
+        margin-top: 30px;
+        padding:0;
+    }
+}
+
+@media (max-width:575px){
+    .commonPaging{
+        margin-bottom: 20px;
+    }
+    .commonPaging {
+    }
+}
+
+
+@include media('<=575px'){
+    .commonPaging{
+        padding-top: 20px;
+    }
+}

@@ -1,0 +1,172 @@
+.commonList {
+    &.active{
+        ul {
+            li{
+                a{
+                    .text{
+                        .title{
+                            max-width:360px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ul {
+        li {
+            margin-bottom: 40px;
+            &:hover{
+                a{
+                box-shadow: 0px 0px 20px 0px rgba(1, 1, 1, 0.1);
+
+                    .text{
+                        background:#fff;
+                        .title{
+                            color:$color;
+                        }
+                        .btn{
+                            opacity:1;
+                        }
+                    }
+                    .img{
+                        img{
+                            transform:scale(1.1);
+                        }
+                    }
+                }
+            }
+            a {
+                display: flex;
+                transition:0.5s ease all;
+
+                .img {
+                    overflow:hidden;
+                    img{
+                        transition:0.5s ease all;
+                    }
+                }
+
+                .text {
+                    padding:30px 0;
+                    flex        : 1;
+                    padding-left: 35px;
+                    background  : #f6f6f6;
+                    padding-right: 50px;
+                    transition:0.5s ease all;
+                    .title {
+                        font-size    : 18px;
+                        color        : #323232;
+                        margin-bottom: 24px;
+                        font-weight  : bold;
+                        @include omit();
+                        transition:0.5s ease all;
+                        max-width:430px;
+                    }
+                    .desc{
+                        color:#737373;
+                        font-size:14px;
+                        line-height:1.8;
+                        @include omits(3);
+                        height:75px;
+                        overflow:hidden;
+                    }
+                    .date{
+                        font-size:14px;
+                        color:#737373;
+                        float:left;
+                        margin-top: 15px;
+                        img{
+                            margin-bottom:3px;
+                            margin-right:6px;
+                        }
+                    }
+                    .btn{
+                        opacity:0;
+                        transition:0.5s ease all;
+                        width:120px;
+                        height:40px;
+                        background: $color;
+                        color:#fff;
+                        display: flex;
+                        border-radius:0;
+                        float:right;
+                        align-items:center;
+                        justify-content: center;
+                        font-size: 14px;
+                        // margin-top: 14px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:991px){
+    .commonList ul li a .text .title{
+        max-width: 230px;
+    }
+
+}
+
+@include media('>=768px','<992px'){
+    .commonList ul li a .text .desc{
+        @include omits(2);
+        height:52px;
+    }
+    body{
+    }
+    .commonList ul li a .text .date{
+        display: none;
+    }
+    .commonList ul li a .text{
+        width:375px;
+    }
+}
+
+@media (max-width:767px){
+    .commonList ul{
+        display: flex;
+        flex-flow:wrap;
+    }
+    .commonList ul li{
+        width:50%;
+    }
+    .commonList ul li a{
+        flex-direction: column;
+        margin:0 5px;
+    }
+    .commonList ul li a .text{
+        align-items:center;
+        justify-content: center;
+    }
+    .commonList ul li a .text .btn{
+        float:inherit;
+        margin-left:auto;
+        margin-right:auto;
+        float:initial;
+        display:none;
+    }
+    .commonList ul li a .text{
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .commonList ul li{
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:521px){
+    .commonList ul li a .text{
+        padding:15px;
+    }
+    .commonList ul li a .text .title{
+        margin-bottom: 14px;
+    }
+    
+}
+@media (max-width:400px){
+    .commonList ul li{
+        width:100%;
+    }
+}

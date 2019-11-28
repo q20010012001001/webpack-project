@@ -1,0 +1,21 @@
+<% let ahref = typeof href == 'undefined'?'javascript:;':href %>
+
+<% let data = [
+        '内衬不锈钢双金属复合管焊接方法 不锈钢焊条打底',
+        '天禾裕不锈钢复合管护栏制作',
+        '不锈钢护栏高速用复合管',
+        '期货价格有望率先止跌反弹进一步增强不锈钢无缝管现货筑底信心',
+        '采暖季限产结束后不锈钢焊管需求恢复速度将会快于供应',
+        '主导钢厂挺价意识仍较强 各地不锈钢管资源多有短缺现象',
+        '短期供需错配或导致304不锈钢管价格在时点前后达到年内高点',
+        '全国304不锈钢管社会库存微升 多种因素促成今年市场红火',
+    ] %>
+<div class="commonRecommended">
+    <div class="title">最新资讯推荐</div>
+    <ul>
+        <% data.forEach((item,index) => { %>
+        <li><a href="news-detail.html"><%= item %></a></li>
+        <% }) %>
+
+    </ul>
+</div>

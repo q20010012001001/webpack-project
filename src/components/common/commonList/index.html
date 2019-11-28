@@ -1,0 +1,28 @@
+<% let containerBollean = typeof container == 'undefined'?'container':'' %> 
+<% let dateBollean = typeof date == 'undefined'?false:true %>
+<% let ahrefBollean = typeof href == 'undefined'?'javascript':href %> 
+<% let titlewidth = typeof titwidth == 'undefined'?'':'active' %>  
+<div class="commonList <%= containerBollean %> <%= titlewidth %>"> 
+    <ul>
+        <% data.list.forEach((item,index) => { %>
+         <li>
+            <a href="<%= ahrefBollean %>">
+                <div class="img">
+                    <img class="img-fluid" src="${require('@/images/'+data.img+'-'+(index+1)+'.png')}" alt="">
+                </div>
+                <div class="text">
+                    <div class="title"><%= item.title %></div>
+                    <div class="desc"><%= item.desc %></div>
+                    <% if (dateBollean) { %>
+                     <div class="date">
+                        <img class="img-fluid" src="${require('@/images/iconfont-date.png')}" alt="">
+                        <span>2019-05-03</span>
+                    </div>
+                    <% } %>
+                    <div class="btn">查看详情</div>
+                </div>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+</div>

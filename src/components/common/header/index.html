@@ -1,0 +1,160 @@
+<% let data = [
+    {
+        title:'首页',
+        href:'index.html',
+        children:[]
+    },
+    {
+        title:'产品中心',
+        href:'product-center.html',
+        children:[
+            {
+                title:'不锈钢复合管',
+                href:'product-center.html'
+            },
+            {
+                title:'桥梁护栏',
+                href:'product-center.html'
+            },
+            {
+                title:'护栏立柱',
+                href:'product-center.html'
+            }
+        ]
+    },
+    {
+        title:'不锈钢复合管',
+        href:'product-center.html',
+        children:[]
+    },
+    {
+        title:'桥梁护栏',
+        href:'product-center.html',
+        children:[]
+    },
+    {
+        title:'品牌优势',
+        href:'index.html#brandAdvantage',
+        children:[]
+    },
+    {
+        title:'合作案例',
+        href:'cooperation-case.html',
+        children:[
+        ]
+    },
+    {
+        title:'新闻资讯',
+        href:'news-information.html',
+        children:[
+            {
+                title:'公司新闻',
+                href:'news-information.html'
+            },
+            {
+                title:'行业资讯',
+                href:'news-information.html'
+            }
+        ]
+    },
+    {
+        title:'走进鑫迈',
+        href:'walk-into.html',
+        children:[
+            {
+                title:'公司简介',
+                href:'walk-into.html'
+            },
+            {
+                title:'荣誉资质',
+                href:'walk-into.html'
+            },
+            {
+                title:'实力团队',
+                href:'walk-into.html'
+            },
+            {
+                title:'联系我们',
+                href:'contact-us.html'
+            }
+        ]
+    },
+    {
+        title:'联系我们',
+        href:'contact-us.html',
+        children:[]
+    }
+] %>
+<% let coloractive = typeof active == 'undefined'?0:active %>
+
+<header class="fixed-top">
+
+<div class="headerTopC">
+    <div class="container">
+        <div class="left">欢迎来到法国戴高乐官方网站!</div>
+        <div class="right">
+            <a href="javascript:;">联系我们</a>
+            |
+            <a href="javascript:;">收藏本站</a>
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="${require('@/images/aksldmaksldmlas123.png')}" class="img-fluid" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+                <ul class="navbar-nav">
+                    <% data.forEach((item,index) => { %>
+                    <% let dropdown = item.children.length?'dropdown':'' %>
+                    <% let active = index == coloractive?'active':'' %>
+                    <li class="nav-item <%= dropdown %> <%= active %>">
+                        <% if (item.children.length) { %>
+                        <span class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <% if (item.href) { %>
+                            <a href="<%= item.href %>"><%= item.title %></a>
+                            <% } else { %>
+                            <%= item.title %>
+                            <% } %>
+                        </span>
+                        <% } else { %>
+                        <a class="nav-link" href="<%= item.href %>"><%= item.title %></a>
+                        <% } %>
+
+                        <% if (item.children.length) { %>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <% item.children.forEach(item2 => { %>
+                            <a class="dropdown-item" href="<%= item2.href %>"><%= item2.title %></a>
+                            <% }) %>
+                        </div>
+                        <% } %>
+                    </li>
+                    <% }) %>
+                </ul>
+
+                <div class="tplNumber">
+                    <div class="img">
+                        <img src="${require('@/images/qwelqmwle123.png')}" class="img-fluid" alt="">
+                    </div>
+                    <div class="text">
+                        <span>服务热线</span>
+                        <span class="bold">18201450258</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+</header>

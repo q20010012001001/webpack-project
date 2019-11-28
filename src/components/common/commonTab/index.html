@@ -1,0 +1,14 @@
+<% let containerclass = typeof container == 'undefined'?'container':'' %> 
+<% let ahref = typeof href == 'undefined'?'javascript:;':href %> 
+<!-- tab选项 -->
+<div class="commonTab <%= containerclass %>"> 
+    <ul class="clearfix">
+        <% data.forEach((item,index) => { %>
+            <% let active = '' %> 
+            <% if (index == 0) { %>
+                <% active = 'active' %> 
+            <% } %>  
+            <li class="<%= active %>"><a href="<%= ahref %>"><%= item %></a></li>
+        <% }) %>
+    </ul>
+</div>

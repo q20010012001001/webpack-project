@@ -1,0 +1,64 @@
+.rightbottom{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    color:#fff;
+    z-index:2;
+    ul li{
+        &:hover{
+            background: $color;
+        }
+        width:50px;
+        transition:0.5s ease all;
+        height:50px;
+        background: #dfdfdf;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+        margin-bottom: 5px;
+        position:relative;
+        z-index:2;
+        a,.parent{
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position:relative;
+            z-index:2;
+            .position{
+                position:absolute;
+                bottom:0;
+                display: none;
+            }
+        }
+        &:nth-of-type(2){
+            .position{
+                left:-220px;
+                width:200px;
+                top:0;
+                margin:auto;
+                background: $color;
+                color:#fff;
+                height:50px;
+                line-height: 50px;
+                text-align: center;
+            }
+        }
+        &:nth-of-type(3){
+            .position{
+                width:150px;
+                height:150px;
+                top:0;
+                bottom:0;
+                margin:auto;
+                left:-170px
+            }
+        }
+    }
+}
+
+@media (max-width:767px){
+.rightbottom{
+    display: none;  
+}
+}

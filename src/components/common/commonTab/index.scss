@@ -1,0 +1,43 @@
+.commonTab{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    ul{
+        li{
+            &:last-child{
+                margin-right:0;
+
+            }
+            float:left;
+            margin-right: 15px;
+            border-bottom:4px solid transparent;
+            margin-top: 20px;
+            transition:0.5s ease all;
+            &:hover,&.active{
+                border-bottom:4px solid $color;
+            }
+            a{
+                display:block;
+                font-size:18px;
+                color:#505050;
+                padding:5px 0;
+            }
+        }
+    }
+}
+
+@media (max-width:767px){
+    .commonTab{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        ul{
+            display:flex;
+            flex-flow:wrap;
+            justify-content: center;
+            li{
+                margin-right:10px;
+                margin-left:10px;
+            }
+        }
+    }
+}

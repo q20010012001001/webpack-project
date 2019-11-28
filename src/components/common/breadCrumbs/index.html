@@ -1,0 +1,28 @@
+<!-- {
+    "data":[
+        {
+            "title":"首页",
+            "href":"index.html"
+        },
+        {
+            "title":"产品中心",
+            "href":"productCenter.html"
+        }
+    ]
+} -->
+
+<% let containerboolean = typeof container == 'undefined'?'container':'' %> 
+<div class="breadCrumbs">
+    <div class="<%= containerboolean %>">
+        <a href="javascript:;">当前位置:&nbsp;</a>
+
+        <% for( let i = 0; i < data.length-1; i++ ) { %>
+        <a href='<%= data[i].href%>'><%= data[i].title %></a>
+        >
+        <% } %>
+        <% for( let i = data.length-1; i < data.length; i++ ) { %>
+        <a href='javascript:;' class="active"><%= data[i].title %></a>
+        <% } %>
+
+    </div>
+</div>

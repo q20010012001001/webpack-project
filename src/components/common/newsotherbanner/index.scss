@@ -1,0 +1,47 @@
+.newsotherbanner{
+    
+    position: relative;
+    overflow:hidden;
+    height:300px;
+    @include bgInit();
+    .container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    overflow:hidden;
+        bottom: 0;
+        .text{
+            height:100%;
+            font-weight:bold;
+            @include flexCenter();
+            flex-direction: column;
+        }
+        span{
+            line-height: 1;
+            color:#fff;
+            display: block;
+            padding: 10px 0;
+            text-align: center;
+            &:nth-of-type(1){
+                font-size: 24px;
+            }
+            &:nth-of-type(2){
+                font-size: 32px;
+            }
+        }
+    }
+    @include media('<=767px'){
+        .container span:nth-of-type(2){
+            font-size:18px;
+            line-height:1.5
+        }
+        .container span:nth-of-type(1){
+            font-size:16px;
+        }
+        &{
+            height:150px;
+        }
+
+    }
+}

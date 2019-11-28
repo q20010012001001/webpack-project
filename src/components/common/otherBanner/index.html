@@ -1,0 +1,11 @@
+<% let bannerurl = banner %>
+<% let Title = typeof title == 'undefined'?false:title %>  
+
+<!-- 其他页面公共banner -->
+<div class="otherBanner">
+    <a href="javascript:;" style="background-image:url(${require('@/images/'+(bannerurl)+'')});">
+        <% if (Title) { %>
+        <div class="title"><%= Title %></div>    
+        <% } %>
+    </a>
+</div>

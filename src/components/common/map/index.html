@@ -1,0 +1,19 @@
+<!-- 地图组件 -->
+<!-- 经纬度查询https://jingweidu.51240.com/ -->
+<!-- http://www.gpsspg.com/maps.htm -->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=ALHB3h00OcGp0GIQNegGtjKK76I8vuTI"></script>
+<script>
+$(function(){
+    // 容器id 经纬坐标
+    function otherMap(id, number,number2) {
+    var map = new BMap.Map(id);
+    var point = new BMap.Point(number,number2)
+    map.centerAndZoom(point, 18)
+    var marker = new BMap.Marker(point)
+    map.addOverlay(marker)
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE)
+}
+otherMap('bjmap','40.0597967808','116.3085135744')
+})
+</script>
+<div class="map" id="bjmap"></div>

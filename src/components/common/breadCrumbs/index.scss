@@ -1,0 +1,14 @@
+.breadCrumbs{
+    height:50px;
+    border-bottom:1px solid #f3f3f3;
+    background: #ffffff;
+    display: flex;
+    align-items:center;
+    a{
+        color:#6d6c6c;
+        font-size: 14px;
+        &.active{
+            color:$color;
+        }
+    }
+}
